@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFoxLib", "UFoxLib.csproj", "{F49F2204-9F57-4503-A4FD-B4F1E8ECBAF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F49F2204-9F57-4503-A4FD-B4F1E8ECBAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49F2204-9F57-4503-A4FD-B4F1E8ECBAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49F2204-9F57-4503-A4FD-B4F1E8ECBAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49F2204-9F57-4503-A4FD-B4F1E8ECBAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFF111DB-A529-4771-9349-442097BE4FB6}
+	EndGlobalSection
+EndGlobal
