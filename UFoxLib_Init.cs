@@ -4,8 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using BepInEx;
-using HarmonyLib;
+//using BepInEx;
+//using HarmonyLib;
 using UFoxLib.MainMenu;
 using UFoxLib.SceneManagement;
 using UnityEngine;
@@ -19,11 +19,11 @@ namespace UFoxLib
     {
         public UFoxLib_Init()
         {
-            new Harmony("UFoxPatcher_Core").PatchAll();
-            SceneManager.sceneLoaded += UFoxSceneLoadManager.SceneLoaded;
-            CreatePersistentObject();
-            Initialize();
-            if (UFoxLib_Init.m_debug) CreateTestModEntry();
+            //new Harmony("UFoxPatcher_Core").PatchAll();
+            //SceneManager.sceneLoaded += UFoxSceneLoadManager.SceneLoaded;
+           // CreatePersistentObject();
+            //Initialize();
+           // if (UFoxLib_Init.m_debug) CreateTestModEntry();
         }
 
         void Initialize()
@@ -34,10 +34,10 @@ namespace UFoxLib
 
         void CreatePersistentObject()
         {
-            GameObject UFoxPersistent = new GameObject("UFoxPersistent");
-            UFoxPersistent.hideFlags = HideFlags.HideAndDontSave;
-            global::UnityEngine.Object.DontDestroyOnLoad(UFoxPersistent);
-            UFoxPersistent.AddComponent<UFoxLibPersistent>();
+           // GameObject UFoxPersistent = new GameObject("UFoxPersistent");
+           // UFoxPersistent.hideFlags = HideFlags.HideAndDontSave;
+           // global::UnityEngine.Object.DontDestroyOnLoad(UFoxPersistent);
+            //UFoxPersistent.AddComponent<UFoxLibPersistent>();
         }
 
         void CreateTestModEntry()
@@ -51,7 +51,7 @@ namespace UFoxLib
         }
 
         //public static AssetBundle bundle = AssetBundle.LoadFromStream(Assembly.GetExecutingAssembly().GetManifestResourceStream("ufoxlib"));
-        public static AssetBundle bundle = AssetBundle.LoadFromMemory(Properties.Resources.ufoxlib);
+        //public static AssetBundle bundle = AssetBundle.LoadFromMemory(Properties.Resources.ufoxlib);
 
         public static bool m_debug = true;
     }

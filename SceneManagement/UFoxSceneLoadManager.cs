@@ -38,22 +38,6 @@ namespace UFoxLib.SceneManagement
         //============================================================================================================================
         static void OnGameScene(Scene _currentScene)
         {
-            //UnitEditorManager _ucManager =
-            // _currentScene.GetRootGameObjects().ToList<GameObject>()
-            //.Find((GameObject x) => x.GetComponent<UnitEditorManager>()).GetComponent<UnitEditorManager>();
-
-            var _teamHealthbarParent = _currentScene.GetRootGameObjects().ToList<GameObject>().
-                Find((GameObject x) => x.GetComponent<BattleUIManager>()).transform;
-
-            if (_teamHealthbarParent == null) return;
-
-            GameObject _teamHealthbarObject =
-            global::UnityEngine.Object.Instantiate<GameObject>
-            (
-                 UFoxLib_Init.bundle.LoadAsset<GameObject>("UFoxLib_TeamHealthbar"),
-                 _teamHealthbarParent
-            );
-            _teamHealthbarObject.transform.SetAsLastSibling();
         }
         //============================================================================================================================
         static void OnSecretUnits(Scene _currentScene)
@@ -134,31 +118,6 @@ namespace UFoxLib.SceneManagement
         //============================================================================================================================
         static void OnMainMenu()
         {
-            if (UFoxSceneLoadManager.m_mainMenuUnlocks == null) return;
-
-            GameObject menuObject =
-            global::UnityEngine.Object.Instantiate<GameObject>
-            (
-                 UFoxLib_Init.bundle.LoadAsset<GameObject>("UFoxLibUI_Menu"),
-                 MainMenuButtons.Instance.transform.root
-            );
-
-            menuObject.GetComponent<UFoxLibMenuHandler>().InitializeMenu();
-
-            for (int i = 0; i < UFoxSceneLoadManager.m_mainMenuUnlocks.Count; i++)
-            {
-                bool _isAlreadyUnlocked = !ServiceLocator.GetService<ISaveLoaderService>().
-                    HasUnlockedSecret(UFoxSceneLoadManager.m_mainMenuUnlocks[i].m_unlockKey);
-                if (_isAlreadyUnlocked)
-                {
-                    ServiceLocator.GetService<ISaveLoaderService>().
-                        UnlockSecret(UFoxSceneLoadManager.m_mainMenuUnlocks[i].m_unlockKey);
-                    ServiceLocator.GetService<ModalPanel>().OpenUnlockPanel
-                        (UFoxSceneLoadManager.m_mainMenuUnlocks[i].m_unlockKey,
-                        UFoxSceneLoadManager.m_mainMenuUnlocks[i].m_icon);
-                    //!COMMENT! - Implement custom modal panel, or patch for changing "Secret Unlocked", keep in mind HU's patch
-                }
-            }
         }
         //============================================================================================================================
 
