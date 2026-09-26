@@ -14,6 +14,7 @@ namespace UFoxLib.UI
         public void FadeIn() => StartCoroutine(AnimateImage(true));
 
         public void FadeOut() => StartCoroutine(AnimateImage(false));
+        public void FadePing() => StartCoroutine(AnimateImagePing());
 
         public void StopFade(bool _inOut)
         {
@@ -33,6 +34,23 @@ namespace UFoxLib.UI
                 );
 
                 currentAnimTime += Time.unscaledDeltaTime;
+                yield return null;
+            }
+
+            yield break;
+        }
+
+        private IEnumerator AnimateImagePing()
+        {
+            float timer = 0f;
+
+            while (timer < 1f)
+            {
+                timer += Time.unscaledDeltaTime * 5f;
+                float a = Mathf.Lerp(1f, 0f, timer);
+                Color color = m_bg.color;
+                color.a = a;
+                m_bg.color = color;
                 yield return null;
             }
 

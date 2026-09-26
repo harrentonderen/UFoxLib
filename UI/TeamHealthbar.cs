@@ -227,25 +227,23 @@ namespace UFoxLib.UI
         [SerializeField] private AnimationCurve m_recoverCurve;
         [SerializeField] private AnimationCurve m_damageCurve;
 
-        [FoldoutGroup("---HEALTHBAR BLUE---")]
-        public Image m_barRed;
-        public float m_healthValueRed;
-        [SerializeField] private float m_healthRed;
-        [SerializeField] private float m_healthRedOld;
-        [SerializeField] private float m_healthOverflowRed;
-        [SerializeField] private bool m_slidingRed;
-        [SerializeField] private bool m_isSlidingRed;
-        private Coroutine _slidingBlueCoroutine;
+        [FoldoutGroup("---HEALTHBAR RED---")] public Image m_barRed;
+        [FoldoutGroup("---HEALTHBAR RED---")] public float m_healthValueRed;
+        [FoldoutGroup("---HEALTHBAR RED---")][SerializeField] private float m_healthRed;
+        [FoldoutGroup("---HEALTHBAR RED---")][SerializeField] private float m_healthRedOld;
+        [FoldoutGroup("---HEALTHBAR RED---")][SerializeField] private float m_healthOverflowRed;
+        [FoldoutGroup("---HEALTHBAR RED---")][SerializeField] private bool m_slidingRed;
+        [FoldoutGroup("---HEALTHBAR RED---")][SerializeField] private bool m_isSlidingRed;
+        [FoldoutGroup("---HEALTHBAR RED---")] private Coroutine _slidingBlueCoroutine;
 
-        [FoldoutGroup("---HEALTHBAR BLUE---")]
-        public Image m_barBlue;
-        public float m_healthValueBlue;
-        [SerializeField] private float m_healthBlue;
-        [SerializeField] private float m_healthBlueOld;
-        [SerializeField] private float m_healthOverflowBlue;
-        [SerializeField] private bool m_slidingBlue;
-        [SerializeField] private bool m_isSlidingBlue;
-        private Coroutine _slidingRedCoroutine;
+        [FoldoutGroup("---HEALTHBAR BLUE---")] public Image m_barBlue;
+        [FoldoutGroup("---HEALTHBAR BLUE---")] public float m_healthValueBlue;
+        [FoldoutGroup("---HEALTHBAR BLUE---")][SerializeField] private float m_healthBlue;
+        [FoldoutGroup("---HEALTHBAR BLUE---")][SerializeField] private float m_healthBlueOld;
+        [FoldoutGroup("---HEALTHBAR BLUE---")][SerializeField] private float m_healthOverflowBlue;
+        [FoldoutGroup("---HEALTHBAR BLUE---")][SerializeField] private bool m_slidingBlue;
+        [FoldoutGroup("---HEALTHBAR BLUE---")][SerializeField] private bool m_isSlidingBlue;
+        [FoldoutGroup("---HEALTHBAR BLUE---")] private Coroutine _slidingRedCoroutine;
 
         [SerializeField] private float m_latestDeathTimestamp;
         [SerializeField] private float m_firstDeathTimestampAfterRecover;
