@@ -13,8 +13,9 @@ using UnityEngine.SceneManagement;
 
 namespace UFoxLib
 {
-    [BepInPlugin("terren.ufoxlib", "UFoxLib", "2.0.0")]
-    public class UFoxLib_Init : BaseUnityPlugin
+    //[BepInPlugin("terren.ufoxlib", "UFoxLib", "2.0.0")]
+   // public class UFoxLib_Init : BaseUnityPlugin
+    public class UFoxLib_Init
     {
         public UFoxLib_Init()
         {
